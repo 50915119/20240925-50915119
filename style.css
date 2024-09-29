@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列 */
+    gap: 10px;
+}
+
+.card {
+    position: relative; /* 使子元素相對於此元素定位 */
+    cursor: pointer; /* 鼠標懸停顯示手形 */
+    perspective: 1000px; /* 透視效果 */
+    width: 100px; /* 確保固定大小 */
+    height: 140px; /* 確保固定大小 */
+}
+
+.card-face {
+    width: 100%; /* 使卡片面積填滿 */
+    height: 100%; /* 使卡片面積填滿 */
+    position: absolute; /* 讓正面和背面重疊 */
+    backface-visibility: hidden; /* 隱藏背面 */
+    transition: transform 0.6s; /* 平滑過渡效果 */
+}
+.card-face img {
+    width: 100%; /* 使圖片填滿卡片 */
+    height: auto; /* 高度自適應以保持比例 */
+    transform: scale(1); /* 縮小圖片至100% */
+    transition: transform 0.3s; /* 添加平滑過渡 */
+}
+
+.card-face.back {
+    transform: rotateY(180deg); /* 背面旋轉180度 */
+}
+
+.card.flipped .card-face.front {
+    transform: rotateY(180deg); /* 正面旋轉180度 */
+}
+
+.card.flipped .card-face.back {
+    transform: rotateY(0deg); /* 背面正常顯示 */
+}
+
+.card.small .card-face {
+    width: 60px; /* 小卡片 */
+    height: 80px;
+}
+
+.card.medium .card-face {
+    width: 100px; /* 中卡片 */
+    height: 140px;
+}
+
+.card.large .card-face {
+    width: 140px; /* 大卡片 */
+    height: 200px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡牌翻面效果</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="controls">
+        <label for="size">選擇卡片大小:</label>
+        <select id="size" onchange="changeCardSize()">
+            <option value="small">小</option>
+            <option value="medium" selected>中</option>
+            <option value="large">大</option>
+        </select>
+        
+        <label for="theme">選擇卡片主題:</label>
+        <select id="theme" onchange="changeCardTheme()">
+            <option value="apex">APEX</option>
+            <option value="nba">NBA</option>
+        </select>
+    </div>
+
+
+        <!-- 卡片將由 JavaScript 動態生成 -->
+    </div>
+
+    <button onclick="startGame()">開始遊戲</button>
+    <button onclick="showFront()">轉到正面</button>
+    <button onclick="showBack()">轉到背面</button>
+    <div id="countdown" style="font-size: 24px; margin-top: 20px;"></div> <!-- 倒數顯示 -->
+    <div class="card-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>
